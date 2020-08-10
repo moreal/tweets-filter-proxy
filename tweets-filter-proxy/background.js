@@ -92,10 +92,8 @@ function listener(details) {
     console.debug(newTimelineInstructionEntries);
 
     json.timeline.instructions[0].addEntries.entries = newTimelineInstructionEntries;
-
     console.debug(json);
-    // Just change any instance of Example in the HTTP response
-    // to WebExtension Example.
+
     filter.write(encoder.encode(JSON.stringify(json)));
     console.debug("Removed", removedTweetIds);
     console.debug("Removed", removedTweets);
