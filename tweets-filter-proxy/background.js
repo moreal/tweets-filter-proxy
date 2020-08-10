@@ -105,6 +105,6 @@ function listener(details) {
 
 browser.webRequest.onBeforeRequest.addListener(
   listener,
-  { urls: ["https://api.twitter.com/2/timeline/home.json*"], types: ["xmlhttprequest", "object"] },
+  { urls: ["https://api.twitter.com/2/timeline/home.json*"], types: ["xmlhttprequest"] },
   ["blocking"]
 );
