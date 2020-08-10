@@ -2,10 +2,11 @@ function listener(details) {
   let filter = browser.webRequest.filterResponseData(details.requestId);
   let decoder = new TextDecoder("utf-8");
   let encoder = new TextEncoder();
-  console.log(details.method);
-  console.log(details.url);
+
+  console.log("New request came, ", details.method, details.url);
 
   if (details.method === "OPTIONS") {
+    console.log("Ignore 'OPTIONS' request.")
     return {};
   }
 
@@ -43,7 +44,7 @@ function listener(details) {
       const [entryType, tweetId] = entryId.split("-");
 
       if (entryType === "homeConversation") {
-        console.log("Skip homeConversation, entry:", entry);
+        console.log("Skip 'homeConversation-*', entry:", entry);
         continue;
       }
 
