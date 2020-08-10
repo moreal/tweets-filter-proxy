@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "Tweets filter proxy",
+  "version": "0.1",
+  "description": "A browser extension to filter tweets through intercepting web requests ",
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "https://twitter.com/",
+    "https://api.twitter.com/*"
+  ] 
+}
