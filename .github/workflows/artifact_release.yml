@@ -1,0 +1,14 @@
+name: "Artifact release"
+on: [push, pull_request]
+
+jobs:
+  zip_and_artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Zip
+        run: zip tweets-filter-proxy.zip tweets-filter-proxy/*
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: artifact
+          path: tweets-filter-proxy.zip
